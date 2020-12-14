@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateMonedaTable extends Migration
+class CreateMonedasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -15,11 +15,16 @@ class CreateMonedaTable extends Migration
     {
         Schema::create('moneda', function (Blueprint $table) {
             $table->id();
-            $table->string('nombremoneda', 30)->unique();
-            $table->char('simbolo', 6);
-            $table->string('pais', 30)->unique();
-            $table->decimal('valormoneda', 4,1)->unique();
-            $table->date('fechamoneda')->nullable();
+            
+            $table->string('nombre', 40);
+            $table->string('simbolo', 5);
+            $table->string('pais', 40);
+            $table->decimal('valor', 8, 2);
+            $table->date('fecha')->nullable();
+            
+            $table->timestamps();
+            
+            $table->unique(['nombre', 'pais']);
         });
     }
 

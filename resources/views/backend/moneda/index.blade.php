@@ -43,29 +43,30 @@ id -> id del elemento afectado
 @endif
 --}}
 
+
 <table class="table table-hover">
     <thead>
         <tr>
-            <th>#id</th>
-            <th>Nombre</th>
-            <th>Simbolo</th>
-            <th>Pais</th>
-            <th>Valor €</th>
-            <th>fecha</th>
-            <th>show</th>
-            <th>edit</th>
-            <th>delete</th>
+            <th scope="col">id</th>
+            <th scope="col">nombre</th>
+            <th scope="col">simbolo</th>
+            <th scope="col">pais</th>
+            <th scope="col">valor</th>
+            <th scope="col">fecha</th>
+            <th scope="col">show</th>
+            <th scope="col">edit</th>
+            <th scope="col">delete</th>
         </tr>
     </thead>
     <tbody>
     @foreach ($monedas as $moneda)
         <tr>
-            <td>{{ $moneda->id }}</td>
-            <td>{{ $moneda->nombremoneda }}</td>
-            <td>{{ $moneda->simbolo }}</td>
+            <td scope="row">{{ $moneda->id }}</td>
+            <td>{{ $moneda->nombre }}</td>
+            <td>{{ $moneda->simbolo }}
             <td>{{ $moneda->pais }}</td>
-            <td>{{ $moneda->valormoneda }}</td>
-            <td>{{ $moneda->fechamoneda }}</td>
+            <td>{{ $moneda->valor }}</td>
+            <td>{{ date('d-m-Y', strtotime($moneda->fecha)) }}</td>
             <td><a href="{{ url('backend/moneda/' . $moneda->id) }}">show</a></td>
             <td><a href="{{ url('backend/moneda/' . $moneda->id . '/edit') }}">edit</a></td>
             <td><a href="#" data-id="{{ $moneda->id }}" class="enlaceBorrar" >delete</a></td>

@@ -13,6 +13,7 @@
     <div class="col-lg-12">
         <div class="card">
             <div class="card-body">
+                <a href="{{ url()->previous() }}" class="btn btn-primary">Back</a>
                 <a href="{{ url('backend/moneda') }}" class="btn btn-primary">monedas</a>
                 <a href="{{ url('backend/moneda/create') }}" class="btn btn-primary">Create moneda</a>
                 <a href="#" data-id="{{ $moneda->id }}" data-name="{{ $moneda->nombremoneda }}" class="btn btn-danger" id="enlaceBorrar">Delete moneda</a>

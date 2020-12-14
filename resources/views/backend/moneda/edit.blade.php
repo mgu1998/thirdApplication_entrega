@@ -29,32 +29,33 @@
         </div>
     </div>
 @endif
-<form role="form" action="{{ url('backend/moneda/' . $moneda->id) }}" method="post" id="editMonedaForm">
+<form role="form" action="{{ url('backend/moneda/' . $moneda->id) }}" method="post" id="editMonedaForm" enctype="multipart/form-data">
     @csrf
     @method('put')
     <div class="card-body">
         <div class="form-group">
-            <label for="nombremoneda">nombre</label>
-            <input type="string" maxlength="30" minlength="2" required class="form-control" id="nombremoneda" placeholder="moneda name" name="nombremoneda" value="{{ old('nombremoneda', $moneda->nombremoneda) }}">
+            <label for="nombre">Nombre</label>
+            <input type="text" maxlength="40" minlength="1" required class="form-control" id="nombre" placeholder="Nombre de la Moneda" name="nombre" value="{{ old('nombre', $moneda->nombre) }}">
         </div>
     <div class="form-group">
-        <label for="simbolo">simbolo</label>
-        <input type="char" maxlength="6" minlength="1" required class="form-control" id="simbolo" placeholder="simbolo" name="simbolo" value="{{ old('simbolo', $moneda->simbolo) }}">
+        <label for="simbolo">Simbolo</label>
+        <input type="text" maxlength="15" minlength="1" required class="form-control" id="simbolo" placeholder="Simbolo de la Moneda" name="simbolo" value="{{ old('simbolo', $moneda->simbolo) }}">
     </div>
     <div class="form-group">
         <label for="pais">Pais</label>
-        <input type="string" maxlength="30" minlength="1" required class="form-control" id="pais" placeholder="Pais" name="pais" value="{{ old('pais', $moneda->pais) }}">
+        <input type="text" maxlength="100" minlength="1" required class="form-control" id="pais" placeholder="Pais de la Moneda" name="pais" value="{{ old('pais', $moneda->pais) }}">
     </div>
     <div class="form-group">
-        <label for="valormoneda">Valor €</label>
-        <input type="decimal" maxlength="4" minlength="1" required class="form-control" id="valormoneda" placeholder="valor" name="valormoneda" value="{{ old('valormoneda', $moneda->valormoneda) }}">
+        <label for="valor">Valor</label>
+        <input type="text" maxlength="20" minlength="1" required class="form-control" id="valor" placeholder="Valor de la Moneda" name="valor" value="{{ old('valor', $moneda->valor) }}">
     </div>
     <div class="form-group">
-        <label for="fechamoneda">fechamoneda</label>
-    <input type="date" required class="form-control" id="fechamoneda" name="fechamoneda" value="{{ old('fechamoneda', $moneda->fechamoneda) }}">    
+        <label for="fecha">Fecha de entrada en vigor</label>
+        <input type="date" required class="form-control" id="fecha" name="fecha" value="{{ old('fecha', $moneda->fecha) }}">
     </div>
+    </div>
+    
     <!-- /.card-body -->
-    </div>  
     <div class="card-footer">
         <button type="submit" class="btn btn-primary">Submit</button>
     </div>

@@ -24,30 +24,30 @@
         </div>
     </div>
 @endif
-<form action="{{ url('backend/moneda') }}" method="post" id="createMonedaForm">
+<form role="form" action="{{ url('backend/moneda') }}" method="post" id="createMonedaForm">
     @csrf
     <div class="card-body">
         <div class="form-group">
-            <label for="nombremoneda">Nombre</label>
-            <input type="string" maxlength="30" minlength="1" required class="form-control" id="nombremoneda" placeholder="moneda name" name="nombremoneda" value="{{ old('nombremoneda') }}">
+            <label for="nombre">Nombre</label>
+            <input type="text" maxlength="40" minlength="1" required class="form-control" id="nombre" placeholder="Nombre de la Moneda" name="nombre" value="{{ old('nombre') }}">
         </div>
         <div class="form-group">
             <label for="simbolo">Simbolo</label>
-            <input type="char" maxlength="6" minlength="1" required class="form-control" id="simbolo" placeholder="simbolo moneda" name="simbolo" value="{{ old('simbolo') }}">
+            <input type="text" maxlength="5" minlength="1" required class="form-control" id="simbolo" placeholder="Simbolo de la Moneda" name="simbolo" value="{{ old('simbolo') }}">
         </div>
         <div class="form-group">
             <label for="pais">Pais</label>
-            <input type="string" maxlength="30" minlength="1" required class="form-control" id="pais" placeholder="Pais moneda" name="pais" value="{{ old('pais') }}">
+            <input type="text" maxlength="40" minlength="1" required class="form-control" id="pais" placeholder="Pais de la Moneda" name="pais" value="{{ old('pais') }}">
         </div>
         <div class="form-group">
-            <label for="valormoneda">Valor €</label>
-            <input type="decimal" maxlength="4" minlength="1" required class="form-control" id="valormoneda" placeholder="Valor €" name="valormoneda" value="{{ old('valormoneda') }}">
+            <label for="valor">Valor en Euros</label>
+            <input type="number" step="any" required class="form-control" id="valor" placeholder="Valor de la Moneda" name="valor" value="{{ old('valor') }}">
         </div>
-        <div class="form-group">
-            <label for="fechamoneda">fecha-moneda</label>
-            <input type="date" required class="form-control" id="fechamoneda" name="fechamoneda" value="{{ old('fechamoneda') }}">
-
+         <div class="form-group">
+            <label for="fecha">Fecha de entrada en vigor</label>
+            <input type="date" class="form-control" id="fecha" name="fecha" value="{{ old('fecha') }}">
         </div>
+       
     </div>
     <!-- /.card-body -->
     <div class="card-footer">

@@ -20,4 +20,3 @@ Route::get('/', [IndexController::class, 'index'])->name('index');
 Route::get('backend', [BackendController::class, 'main'])->name('backend.main');
 Route::resource('backend/moneda', BackendMonedaController::class, ['names' => 'backend.moneda']);
 Route::get('sesion', [IndexController::class, 'sesion'])->name('sesion');
-
